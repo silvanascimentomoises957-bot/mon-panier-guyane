@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --green: #1a6b2f;
+  --green-dark: #134f22;
+  --green-mid: #228b3c;
+  --green-light: #2da84a;
+  --green-pale: #e8f5ec;
+  --green-border: rgba(26,107,47,0.20);
+  --cream: #f5f7f5;
+  --text: #0f2e17;
+  --text-muted: #4a6b52;
+  --text-sub: #8aaa90;
+  --border: #e0eae2;
+  --shadow: 0 2px 16px rgba(26,107,47,0.08);
+  --shadow-md: 0 4px 24px rgba(26,107,47,0.12);
+  --radius: 18px;
+  --radius-sm: 12px;
+}
+
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+html, body {
+  max-width: 430px;
+  margin: 0 auto;
+  background: var(--cream);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: var(--text);
+  overscroll-behavior: none;
+}
+
+/* Hide scrollbars */
+::-webkit-scrollbar { display: none; }
+* { scrollbar-width: none; }
+
+/* Bottom nav safe area */
+.pb-nav { padding-bottom: 88px; }
+
+/* Pill status */
+.pill-route { background: rgba(26,107,47,0.10); color: var(--green); border: 1px solid var(--green-border); }
+.pill-prep  { background: #fef3c7; color: #b45309; border: 1px solid #fcd34d; }
+.pill-attente { background: #e8f0fe; color: #1a56d4; border: 1px solid #c5d4f8; }
+.pill-livre { background: rgba(26,107,47,0.08); color: var(--green-mid); border: 1px solid rgba(26,107,47,0.15); }
+
+/* Toggle switch */
+.toggle {
+  width: 44px; height: 24px;
+  background: var(--border); border-radius: 50px;
+  position: relative; cursor: pointer; transition: background .2s;
+}
+.toggle.on { background: var(--green); }
+.toggle::after {
+  content: ''; position: absolute;
+  top: 3px; left: 3px;
+  width: 18px; height: 18px;
+  background: #fff; border-radius: 50%;
+  transition: left .2s;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+}
+.toggle.on::after { left: 23px; }
