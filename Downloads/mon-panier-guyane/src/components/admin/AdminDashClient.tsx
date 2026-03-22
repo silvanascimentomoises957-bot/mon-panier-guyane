@@ -1,14 +1,16 @@
 
-type Product = {
-  id: string
-  is_active: boolean
-}
 'use client'
+
 import { useState } from 'react'
 import type { Order } from '@/types/database'
 import { OrderDetailSheet } from './OrderDetailSheet'
 import { ProductFormSheet } from './ProductFormSheet'
 import { createClient } from '@/lib/supabase/client'
+
+type Product = {
+  id: string
+  is_active: boolean
+}
 
 const STATUS_CONFIG = {
   attente:     { label: 'En attente',  bg: '#e8f0fe', color: '#1a56d4' },
