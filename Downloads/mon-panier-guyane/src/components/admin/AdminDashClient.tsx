@@ -48,13 +48,13 @@ export function AdminDashClient({ orders: initialOrders, products: initialProduc
       return exists ? prev.map(p => p.id === saved.id ? saved : p) : [saved, ...prev]
     })
     setEditProduct(null)
-  }
-
+    }
   const handleProductDelete = async (id: string) => {
-    const supabase = createClient()
-    await supabase.from('products').update({ is_active: false }).eq('id', id)
-    setProducts(prev => prev.filter(p => p.id !== id))
-  }
+  const supabase = createClient()
+  await supabase.from('products').update({ is_active: false } as any).eq('id', id)
+
+  setProducts((prev: Product[]) => prev.filter(p => p.id !== id))
+}
 
   return (
     <main className="min-h-screen" style={{ background: 'var(--cream)', paddingBottom: '30px' }}>
