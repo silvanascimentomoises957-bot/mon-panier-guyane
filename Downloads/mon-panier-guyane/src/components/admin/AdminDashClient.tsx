@@ -5,7 +5,7 @@ type Product = {
 }
 'use client'
 import { useState } from 'react'
-import type { Order, Product } from '@/types/database'
+import type { Order } from '@/types/database'
 import { OrderDetailSheet } from './OrderDetailSheet'
 import { ProductFormSheet } from './ProductFormSheet'
 import { createClient } from '@/lib/supabase/client'
