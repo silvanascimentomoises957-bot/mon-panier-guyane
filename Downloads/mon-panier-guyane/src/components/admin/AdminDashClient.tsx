@@ -1,3 +1,8 @@
+
+type Product = {
+  id: string
+  is_active: boolean
+}
 'use client'
 import { useState } from 'react'
 import type { Order, Product } from '@/types/database'
